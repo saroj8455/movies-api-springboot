@@ -1,4 +1,4 @@
-package com.ocemtechzone.movies;
+package com.ocemtechzone.movies.notes;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

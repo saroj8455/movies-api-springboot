@@ -1,4 +1,4 @@
-package com.ocemtechzone.movies;
+package com.ocemtechzone.movies.notes;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,18 +11,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
-
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/api/v1/movies")
-public class MovieController {
+@RequestMapping("/api/v1/notes")
+public class NoteController {
 
+//    @Autowired
+//    private NoteRepository noteRepository;
     @Autowired
-    private MovieService movieService;
+    private NoteService noteService;
+
+    private final Logger LOG = LoggerFactory.getLogger(getClass());
+
+//    @GetMapping
+//    public List<Note> home() {
+//        return  noteRepository.findAll();
+//    }
+
     @GetMapping
-    public ResponseEntity<List<Movie>> home() {
-        return  new ResponseEntity<List<Movie>>(movieService.getMovies(), HttpStatus.OK);
+    public ResponseEntity<List<Note>> home() {
+        LOG.info("Return list of notes");
+        return  new ResponseEntity<List<Note>>(noteService.getNotes(), HttpStatus.OK);
     }
 }
