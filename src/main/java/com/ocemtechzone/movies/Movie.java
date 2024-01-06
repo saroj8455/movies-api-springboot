@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DocumentReference;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ import java.util.List;
 public class Movie {
 
     @Id
-    private ObjectId id;
+    private String id;
     private  String imdbId;
     private String title;
     private String releaseDate;

@@ -13,8 +13,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Note {
 
+//    @Id
+//    private ObjectId Id;
+//    return date and time
     @Id
-    private ObjectId id;
+    private String id;
     private  String text;
     private String title;
+    private String createdAt;
+    private String updatedAt;
 }
